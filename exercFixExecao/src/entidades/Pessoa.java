@@ -7,7 +7,7 @@ package entidades;
  * @author leo_dias
  *
  */
-public class Pessoa {
+public abstract class Pessoa {
 	
 	private String nome;
 	private double rendaAnual;
@@ -36,7 +36,7 @@ public class Pessoa {
 		this.rendaAnual = rendaAnual;
 	}
 	
-	
+	public abstract double calcularImposto();
 	
 	
 
