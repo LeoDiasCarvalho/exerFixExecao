@@ -35,6 +35,7 @@ public class Programa {
 			
 			if(resp == 'f' || resp == 'F') {
 				System.out.print("Nome: ");
+				sc.nextLine();
 				String nome = sc.nextLine();
 				System.out.print("Renda anual: ");
 				double renda = sc.nextDouble();
@@ -44,6 +45,7 @@ public class Programa {
 				lista.add(new Fisica(nome, renda, gasto));
 			}else if(resp == 'j' || resp == 'J') {
 				System.out.print("Nome: ");
+				sc.nextLine();
 				String nome = sc.nextLine();
 				System.out.print("Renda anual: ");
 				double renda = sc.nextDouble();
@@ -57,9 +59,14 @@ public class Programa {
 		System.out.println();
 		System.out.println("Valor dos impostos");
 		
+		double total = 0.0;
 		for(Pessoa p : lista) {
-			System.out.println(p.getNome() + ": $" + p.calcularImposto());
+			System.out.println(p.getNome() + ": $" + String.format("%.2f", p.calcularImposto()));
+			total += p.calcularImposto();
 		}
+		
+		System.out.println();
+		System.out.println("Total impostos: " + String.format("%.2f", total));
 		
 		sc.close();
 	}
